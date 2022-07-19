@@ -1,0 +1,104 @@
+<template>
+  <NInput
+    ref="inputRef"
+    :value="formattedValue"
+    type="tel"
+    :prefix="showPrefix ? 'Rp.' : null"
+    :disabled="disabled"
+  />
+</template>
+
+<script>
+import { useCurrencyInput } from "vue-currency-input";
+import { watch, computed } from "vue";
+
+import NInput from "@/components/NInput/NInput.vue";
+
+export default {
+  name: "NInputCurrency",
+  components: {
+    NInput,
+  },
+  props: {
+    id: {
+      type: String,
+      default: undefined,
+    },
+    name: {
+      type: String,
+      default: undefined,
+    },
+    readonly: {
+      type: Boolean,
+      default: undefined,
+    },
+    autocomplete: {
+      type: Boolean,
+      default: undefined,
+    },
+    autofocus: {
+      type: Boolean,
+      default: undefined,
+    },
+    required: {
+      type: Boolean,
+      default: undefined,
+    },
+    placeholder: {
+      type: [String, Number],
+      default: undefined,
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+    value: {
+      default: 0,
+      type: [Number, String],
+    },
+    showPrefix: {
+      type: Boolean,
+      default: true,
+    },
+    options: {
+      default: () => ({
+        locale: "id-ID",
+        currency: "IDR",
+        autoDecimalDigits: true,
+        hideGroupingSeparatorOnFocus: false,
+        hideNegligibleDecimalDigitsOnFocus: false,
+        exportValueAsInteger: true,
+        precision: 0,
+        currencyDisplay: "hidden",
+      }),
+      type: Object,
+    },
+  },
+  setup(props) {
+    const { formattedValue, inputRef, setValue, setOptions } = useCurrencyInput(
+      props.options
+    );
+
+    const inputProps = computed(() => {
+      const newProps = { ...{}, ...props };
+      delete newProps.showPrefix;
+      delete newProps.options;
+      return newProps;
+    });
+
+    const onValueChanged = (value) => {
+      setValue(value);
+    };
+
+    const onOptionsChanged = (options) => {
+      setOptions(options);
+    };
+
+    watch(() => props.value, onValueChanged);
+
+    watch(() => props.options, onOptionsChanged);
+
+    return { inputRef, formattedValue, inputProps };
+  },
+};
+</script>

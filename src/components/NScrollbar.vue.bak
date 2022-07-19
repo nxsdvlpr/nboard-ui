@@ -1,0 +1,80 @@
+<template>
+  <div ref="osTargetRef" class="os-host n-scrollbar">
+    <div class="os-resize-observer-host"></div>
+    <div class="os-padding">
+      <div class="os-viewport">
+        <div class="os-content"><slot /></div>
+      </div>
+    </div>
+    <div class="os-scrollbar os-scrollbar-horizontal">
+      <div class="os-scrollbar-track">
+        <div class="os-scrollbar-handle"></div>
+      </div>
+    </div>
+    <div class="os-scrollbar os-scrollbar-vertical">
+      <div class="os-scrollbar-track">
+        <div class="os-scrollbar-handle"></div>
+      </div>
+    </div>
+    <div class="os-scrollbar-corner"></div>
+  </div>
+</template>
+
+<script>
+import { onMounted, onBeforeUnmount, watch, ref } from "vue";
+import OverlayScrollbars from "overlayscrollbars";
+import "overlayscrollbars/css/OverlayScrollbars.css";
+
+export default {
+  inheritAttrs: false,
+  name: "NScrollbar",
+  props: {
+    options: {
+      type: Object,
+    },
+    extensions: {
+      type: [String, Array, Object],
+    },
+  },
+  setup(props, { expose }) {
+    const osInstance = ref(null);
+    const osTargetRef = ref(null);
+
+    expose({
+      osInstance() {
+        return osInstance.value;
+      },
+      osTarget() {
+        return this.$el || null;
+      },
+    });
+
+    const onValueChanged = (currOptions) => {
+      if (OverlayScrollbars.valid(osInstance.value)) {
+        osInstance.value.options(currOptions);
+      }
+    };
+
+    watch(() => props.options, onValueChanged);
+
+    onMounted(() => {
+      osInstance.value = OverlayScrollbars(
+        osTargetRef.value,
+        props.options || {},
+        props.extensions
+      );
+    });
+
+    onBeforeUnmount(() => {
+      if (OverlayScrollbars.valid(osInstance.value)) {
+        osInstance.value.destroy();
+        osInstance.value = null;
+      }
+    });
+
+    return {
+      osTargetRef,
+    };
+  },
+};
+</script>
