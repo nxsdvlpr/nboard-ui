@@ -9,26 +9,25 @@
         @on-create="onCreate"
       />
 
-      <transition name="fade">
+      <Transition name="fade">
         <NTableToolbarSearch
           v-if="searchOptions.enabled"
           v-model="nTableSearch"
           :show="!isRowSelected"
         />
-      </transition>
+      </Transition>
 
-      <transition name="slide">
+      <Transition name="slide">
         <slot v-if="isRowSelected" name="toolbar-selected-actions"></slot>
-      </transition>
+      </Transition>
 
-      <transition v-if="deleteOptions.enabled" name="slide">
+      <Transition v-if="deleteOptions.enabled && isRowSelected" name="slide">
         <NTableToolbarDelete
-          v-if="isRowSelected"
           :selected-row-count="$refs.table.selectedRowCount"
           @on-delete="onDelete"
           @on-delete-cancel="onDeleteCancel"
         />
-      </transition>
+      </Transition>
     </div>
 
     <vue-good-table
@@ -45,7 +44,7 @@
       :rows="rows"
       :total-records="computedTotalRecords"
       :is-loading="computedIsLoading"
-      v-bind="{ ...$props, ...$attrs }"
+      v-bind="tableProps"
       v-on="$listeners"
       @on-row-click="onRowClick"
       @on-selected-rows-change="onSelectedRowsChange"
@@ -69,15 +68,17 @@
         />
       </template>
     </vue-good-table>
+    <PortalTarget name="n-table-layout" multiple></PortalTarget>
   </div>
 </template>
 
 <script>
-import { defaults, trim, some } from "lodash";
-import { VueGoodTable } from "vue-good-table";
-
 import "@/assets/css/vue-good-table/style.pcss";
+import { defaults, trim, some, omit } from "lodash";
+import { VueGoodTable } from "vue-good-table";
+import { PortalTarget } from "portal-vue";
 
+import NTableToolbarDelete from "@/components/NTable/NTableToolbarDelete.vue";
 import NTableToolbarCreate from "@/components/NTable/NTableToolbarCreate.vue";
 import NTableToolbarSearch from "@/components/NTable/NTableToolbarSearch.vue";
 import NTableEmptyState from "@/components/NTable/NTableEmptyState.vue";
@@ -86,11 +87,13 @@ import NTableCursorPagination from "@/components/NTable/NTableCursorPagination.v
 export default {
   name: "NTable",
   components: {
-    NTableEmptyState,
-    NTableToolbarCreate,
-    NTableCursorPagination,
-    NTableToolbarSearch,
+    PortalTarget,
     VueGoodTable,
+    NTableToolbarDelete,
+    NTableToolbarCreate,
+    NTableToolbarSearch,
+    NTableEmptyState,
+    NTableCursorPagination,
   },
   props: {
     columns: {
@@ -195,6 +198,23 @@ export default {
     };
   },
   computed: {
+    tableProps() {
+      const props = { ...{}, ...{ ...this.$props, ...this.$attrs } };
+      return omit(props, [
+        "totalRecords",
+        "pageInfo",
+        "createOptions",
+        "searchOptions",
+        "selectOptions",
+        "sortOptions",
+        "deleteOptions",
+        "paginationOptions",
+        "listMode",
+        "bordered",
+        "hasAction",
+        "isLoading",
+      ]);
+    },
     computedColumns() {
       const currencyFn = (x) => x;
       const shortDateFn = (x) => x;

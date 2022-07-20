@@ -42,20 +42,15 @@ export default {
       default: false,
     },
   },
-
-  setup(props, { emit }) {
-    const onInput = debounce((event) => {
+  methods: {
+    onInput: debounce(function (event) {
       const value = event.target.value;
       if (value.length > 2) {
-        emit("input", value);
+        this.$emit("input", value);
       } else {
-        emit("input", null);
+        this.$emit("input", null);
       }
-    }, 300);
-
-    return {
-      onInput,
-    };
+    }, 300),
   },
 };
 </script>

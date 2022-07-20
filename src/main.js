@@ -1,10 +1,10 @@
 import Vue from "vue";
 import App from "@/App.vue";
-import HexaUi from "@/index.js";
+import NboardUi from "@/index.js";
 
 import "@/assets/css/main.pcss";
 
-Vue.use(HexaUi, {});
+Vue.use(NboardUi, {});
 
 Vue.config.productionTip = false;
 

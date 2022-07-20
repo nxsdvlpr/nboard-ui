@@ -1,11 +1,12 @@
 {
   "name": "nboard-ui",
   "description": "A simple admin ui template with tailwind",
-  "version": "0.1.22",
+  "version": "0.2.01",
   "author": {
     "name": "Nexus Dev",
     "email": "nxsdvlpr@gmail.com"
   },
+  "license": "MIT",
   "repository": "https://github.com/nxsdvlpr/nboard-ui",
   "bugs": "https://github.com/nxsdvlpr/nboard-ui/issues",
   "keywords": [
@@ -14,7 +15,6 @@
     "vue",
     "admin"
   ],
-  "license": "MIT",
   "files": [
     "dist"
   ],
@@ -39,22 +39,20 @@
     "@rollup/plugin-alias": "^3.1.9",
     "@vuelidate/core": "^2.0.0-alpha.42",
     "@vuelidate/validators": "^2.0.0-alpha.30",
-    "add": "^2.0.6",
     "core-js": "^3.8.3",
+    "floating-vue": "^1.0.0-beta.18",
     "fuse.js": "^6.6.2",
     "overlayscrollbars": "^1.13.1",
+    "portal-vue": "^2.1.7",
     "rollup-plugin-multi-input": "^1.3.1",
-    "v-tooltip": "^2.1.3",
     "vue": "^2.6.14",
     "vue-client-only": "^2.1.0",
     "vue-currency-input": "^3.0.0",
     "vue-good-table": "^2.21.11",
     "vue-js-toggle-button": "^1.3.3",
     "vue-select": "^3.18.3",
-    "vue-tailwind": "^2.5.1",
     "vue-upload-component": "^2.8.22",
-    "vuedraggable": "^2.24.3",
-    "yarn": "^1.22.19"
+    "vuedraggable": "^2.24.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",

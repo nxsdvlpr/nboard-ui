@@ -134,7 +134,7 @@
         <NWidget title="Widget"></NWidget>
       </div>
 
-      <div class="flex gap-x-4">
+      <div class="flex gap-x-4 mb-4">
         <NSpin type="wave" />
         <NSpin type="plane" />
         <NSpin type="chase" />
@@ -142,6 +142,16 @@
         <NSpin type="pulse" />
         <NSpin type="flow" />
         <NSpin type="fold" />
+      </div>
+
+      <div class="flex flex-row gap-x-2 mb-4">
+        <div class="w-8 h-8 bg-gray-300" v-tooltip="'Hehehe'"></div>
+        <div class="w-8 h-8 bg-gray-300" v-tooltip="'Hehehe'"></div>
+        <div class="w-8 h-8 bg-gray-300" v-tooltip="'Hehehe'"></div>
+      </div>
+
+      <div class="flex flex-col gap-y-2 mb-4">
+        <NTable :rows="tableRows" :columns="tableColumns" />
       </div>
 
       <div class="flex flex-col gap-y-2 mb-4">
@@ -240,7 +250,7 @@
 
             <NInputGroup label="Public">
               <NToggleSwitch
-                v-n-tooltip="'You have unchecked new messages.'"
+                v-tooltip="'You have unchecked new messages.'"
                 class="secondary"
                 :labels="{ checked: 'Yes', unchecked: 'No' }"
                 :sync="true"
@@ -277,53 +287,56 @@
 
         <pre>{{ form.product }}</pre>
       </div>
-
-      <NTable
-        :rows="[]"
-        :columns="[
-          {
-            label: 'Image',
-            field: 'image',
-            align: 'center',
-            width: '100px',
-            sortable: false,
-          },
-          {
-            label: 'Title',
-            field: 'title',
-          },
-          {
-            label: 'Body',
-            field: 'body',
-          },
-          {
-            label: 'Status',
-            field: 'published',
-            align: 'center',
-            width: '120px',
-          },
-          {
-            label: ' ',
-            field: 'action',
-            type: 'action',
-            align: 'right',
-            width: '60px',
-          },
-        ]"
-      />
     </div>
   </div>
 </template>
 
 <script>
 import { useNFormValidation, useNFormValidators } from "@/composables";
-import { onMounted, reactive } from "vue";
-import NTable from "./components/NTable/NTable.vue";
+import { onMounted, reactive, ref, computed } from "vue";
 
 export default {
   name: "App",
   setup() {
     const { required, numeric } = useNFormValidators();
+    const tableColumns = ref([
+      {
+        label: "Image",
+        field: "image",
+        align: "center",
+        width: "100px",
+        sortable: false,
+      },
+      {
+        label: "Title",
+        field: "title",
+      },
+      {
+        label: "Body",
+        field: "body",
+      },
+      {
+        label: "Status",
+        field: "status",
+        align: "center",
+        width: "120px",
+      },
+    ]);
+
+    const tableRows = computed(() => {
+      const list = [];
+
+      for (let i = 1; i <= 5; i++) {
+        list.push({
+          image: `256x256${i}.jpg`,
+          title: `Title #${i}`,
+          body: "Lorem ipsum dolor sit amet consectetur, adipisicing elit",
+          status: `Status #${i}`,
+        });
+      }
+
+      return list;
+    });
     const form = reactive({
       tag: "",
       categories: ["Category 1", "Category 2", "Category 3"],
@@ -386,8 +399,7 @@ export default {
         form.product.enableDiscount = "on";
       }, 4000);
     });
-    return { form, submit, validation };
+    return { form, submit, validation, tableColumns, tableRows };
   },
-  components: { NTable },
 };
 </script>

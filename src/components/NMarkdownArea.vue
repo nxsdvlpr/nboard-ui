@@ -1,16 +1,13 @@
 <template>
-  <client-only>
-    <v-md-editor
-      v-bind="{ ...$props, ...$attrs }"
-      left-toolbar="h bold italic strikethrough quote | ul ol hr | link"
-      right-toolbar="preview fullscreen"
-      v-on="$listeners"
-    />
-  </client-only>
+  <v-md-editor
+    v-bind="{ ...$props, ...$attrs }"
+    left-toolbar="h bold italic strikethrough quote | ul ol hr | link"
+    right-toolbar="preview fullscreen"
+    v-on="$listeners"
+  />
 </template>
 
 <script>
-import ClientOnly from "vue-client-only";
 import VueMarkdownEditor from "@kangc/v-md-editor";
 import "@kangc/v-md-editor/lib/style/base-editor.css";
 import vuepressTheme from "@kangc/v-md-editor/lib/theme/vuepress.js";
@@ -29,7 +26,7 @@ VueMarkdownEditor.use(vuepressTheme, {
 
 export default {
   name: "NMarkdownArea",
-  components: { ClientOnly, "v-md-editor": VueMarkdownEditor },
+  components: { "v-md-editor": VueMarkdownEditor },
   inheritAttrs: false,
 };
 </script>

@@ -1,4 +1,4 @@
-# hexa-ui
+# nboard-ui
 
 ## Project setup
 ```
