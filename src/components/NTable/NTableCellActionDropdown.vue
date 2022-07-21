@@ -1,17 +1,11 @@
 <template>
   <div @click.stop>
-    <NDropdown class="top-right md:bottom-right">
-      <template #trigger="{ mousedownHandler, focusHandler, blurHandler }">
-        <NIconButton
-          :class="button.class"
-          :icon="button.icon"
-          @mousedown="mousedownHandler"
-          @focus="focusHandler"
-          @blur="blurHandler"
-        />
+    <NDropdown class="bottom-right md:bottom-right">
+      <template #toggler>
+        <NIconButton :class="button.class" :icon="button.icon" />
       </template>
-      <div slot-scope="{ blurHandler }">
-        <div role="menu" @click="blurHandler">
+      <div>
+        <div role="menu">
           <slot />
         </div>
       </div>
@@ -20,8 +14,15 @@
 </template>
 
 <script>
+import NDropdown from "@/components/NDropdown.vue";
+import NIconButton from "@/components/NIcon/NIconButton.vue";
+
 export default {
   name: "NTableCellActionDropdown",
+  components: {
+    NDropdown,
+    NIconButton,
+  },
   props: {
     button: {
       type: Object,

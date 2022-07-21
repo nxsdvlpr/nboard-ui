@@ -144,14 +144,72 @@
         <NSpin type="fold" />
       </div>
 
+      <div class="mb-4">
+        <NDropdown>
+          <button
+            class="block w-full px-4 py-2 text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
+            role="menuitem"
+          >
+            Your Profile
+          </button>
+          <button
+            class="block w-full px-4 py-2 text-sm leading-5 text-gray-700 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
+            role="menuitem"
+          >
+            Settings
+          </button>
+
+          <button
+            class="block w-full px-4 py-2 text-sm leading-5 text-red-500 transition duration-150 ease-in-out border-t hover:bg-gray-100 focus:outline-none focus:bg-gray-100"
+          >
+            Close me
+          </button>
+        </NDropdown>
+      </div>
+
       <div class="flex flex-row gap-x-2 mb-4">
-        <div class="w-8 h-8 bg-gray-300" v-tooltip="'Hehehe'"></div>
-        <div class="w-8 h-8 bg-gray-300" v-tooltip="'Hehehe'"></div>
-        <div class="w-8 h-8 bg-gray-300" v-tooltip="'Hehehe'"></div>
+        <div
+          class="flex justify-center items-center w-24 h-24 bg-gray-300"
+          v-tooltip.left="'Left'"
+        >
+          Tooltip
+        </div>
+        <div
+          class="flex justify-center items-center w-24 h-24 bg-gray-300"
+          v-tooltip.top="'Top'"
+        >
+          Tooltip
+        </div>
+        <div
+          class="flex justify-center items-center w-24 h-24 bg-gray-300"
+          v-tooltip.bottom="'Bottom'"
+        >
+          Tooltip
+        </div>
+        <div
+          class="flex justify-center items-center w-24 h-24 bg-gray-300"
+          v-tooltip.right="'Right'"
+        >
+          Tooltip
+        </div>
       </div>
 
       <div class="flex flex-col gap-y-2 mb-4">
-        <NTable :rows="tableRows" :columns="tableColumns" />
+        <NTable :rows="tableRows" :columns="tableColumns">
+          <template #table-row="props">
+            <NTableCellThumb v-if="props.column.field === 'image'" />
+            <NTableCellActionDropdown
+              v-else-if="props.column.type === 'action'"
+              :button="{
+                icon: 'more',
+                class: 'text-gray-500 hover:text-gray-700',
+              }"
+            >
+              <span class="text-danger"> Cancel </span>
+            </NTableCellActionDropdown>
+            <NTableCellResponsive v-else :props="props" />
+          </template>
+        </NTable>
       </div>
 
       <div class="flex flex-col gap-y-2 mb-4">
@@ -320,6 +378,13 @@ export default {
         field: "status",
         align: "center",
         width: "120px",
+      },
+      {
+        label: "",
+        field: "action",
+        type: "action",
+        align: "right",
+        width: "60px",
       },
     ]);
 

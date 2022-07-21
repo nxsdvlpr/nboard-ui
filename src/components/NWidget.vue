@@ -3,7 +3,7 @@
     <h4 v-if="title" class="mb-8 label-lg uppercase text-gray-600">
       {{ title }}
     </h4>
-    <slot></slot>
+    <slot />
   </div>
 </template>
 

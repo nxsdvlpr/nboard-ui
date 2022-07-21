@@ -7,8 +7,13 @@
 </template>
 
 <script>
+import NButton from "@/components/NButton.vue";
+
 export default {
   name: "NTableToolbarCreate",
+  components: {
+    NButton,
+  },
   props: {
     createOptions: {
       type: Object,

@@ -24,13 +24,13 @@
       <Transition v-if="deleteOptions.enabled && isRowSelected" name="slide">
         <NTableToolbarDelete
           :selected-row-count="$refs.table.selectedRowCount"
-          @on-delete="onDelete"
-          @on-delete-cancel="onDeleteCancel"
+          @show-modal="onModalDeleteShow"
+          @delete-cancel="onDeleteCancel"
         />
       </Transition>
     </div>
 
-    <vue-good-table
+    <VueGoodTable
       ref="table"
       :style-class="styleClass"
       :search-options="{
@@ -67,8 +67,23 @@
           @on-per-page-change="onPerPageChange"
         />
       </template>
-    </vue-good-table>
-    <PortalTarget name="n-table-layout" multiple></PortalTarget>
+    </VueGoodTable>
+
+    <NModal
+      header="Confirm Delete!"
+      :showing="isModalDeleteShow"
+      @close="onModalDeleteHide"
+      :showClose="false"
+      :backgroundClose="true"
+    >
+      <div>
+        <div class="mb-4">Are you sure want to delete these records?</div>
+        <div class="text-right">
+          <NButton class="danger mr-2" @click="onDelete">DELETE</NButton>
+          <NButton class="outline" @click="onModalDeleteHide">CANCEL</NButton>
+        </div>
+      </div>
+    </NModal>
   </div>
 </template>
 
@@ -76,8 +91,9 @@
 import "@/assets/css/vue-good-table/style.pcss";
 import { defaults, trim, some, omit } from "lodash";
 import { VueGoodTable } from "vue-good-table";
-import { PortalTarget } from "portal-vue";
 
+import NModal from "@/components/NModal.vue";
+import NButton from "@/components/NButton.vue";
 import NTableToolbarDelete from "@/components/NTable/NTableToolbarDelete.vue";
 import NTableToolbarCreate from "@/components/NTable/NTableToolbarCreate.vue";
 import NTableToolbarSearch from "@/components/NTable/NTableToolbarSearch.vue";
@@ -87,8 +103,9 @@ import NTableCursorPagination from "@/components/NTable/NTableCursorPagination.v
 export default {
   name: "NTable",
   components: {
-    PortalTarget,
     VueGoodTable,
+    NModal,
+    NButton,
     NTableToolbarDelete,
     NTableToolbarCreate,
     NTableToolbarSearch,
@@ -195,6 +212,7 @@ export default {
     return {
       nTableSearch: "",
       isRowSelected: false,
+      isModalDeleteShow: false,
     };
   },
   computed: {
@@ -349,10 +367,18 @@ export default {
       const deletedRows = this.$refs.table.selectedRows;
       this.$emit("on-delete", { deletedRows, event });
       this.clearSelection();
+      this.onModalDeleteHide();
     },
     onDeleteCancel(event) {
       this.$emit("on-delete-cancel", { event });
       this.clearSelection();
+      this.onModalDeleteHide();
+    },
+    onModalDeleteShow() {
+      this.isModalDeleteShow = true;
+    },
+    onModalDeleteHide() {
+      this.isModalDeleteShow = false;
     },
   },
 };

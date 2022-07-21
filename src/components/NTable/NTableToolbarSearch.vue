@@ -30,8 +30,13 @@
 <script>
 import { debounce } from "lodash";
 
+import NIcon from "@/components/NIcon/NIcon.vue";
+
 export default {
   name: "NTableToolbarSearch",
+  components: {
+    NIcon,
+  },
   props: {
     value: {
       type: String,

@@ -8,8 +8,13 @@
 </template>
 
 <script>
+import NSpin from "@/components/NSpin.vue";
+
 export default {
   name: "NTableEmptyState",
+  components: {
+    NSpin,
+  },
   props: {
     isLoading: {
       type: Boolean,

@@ -2,12 +2,13 @@
   <Transition name="fade">
     <div
       v-if="showing"
-      class="fixed inset-0 w-full h-screen flex items-center justify-center bg-smoke-800 z-50"
+      class="fixed inset-0 w-full h-screen flex items-center justify-center bg-smoke-600 z-50"
       @click.self="closeIfShown"
       :class="customCSS.background"
     >
       <div
-        class="relative max-h-screen w-full max-w-2xl bg-white shadow-lg rounded-lg p-8 flex"
+        v-on-clickaway="close"
+        class="relative max-h-screen w-full max-w-xl bg-white shadow-lg rounded-lg flex"
         :class="customCSS.modal"
       >
         <button
@@ -20,7 +21,12 @@
           ×
         </button>
         <div class="overflow-auto max-h-screen w-full">
-          <slot />
+          <div class="border-b border-gray-100 p-3 rounded-t-xl font-medium">
+            Confirm Delete!
+          </div>
+          <div class="px-4 py-3 md:px-6 md:py-6">
+            <slot />
+          </div>
         </div>
       </div>
     </div>
@@ -28,8 +34,11 @@
 </template>
 
 <script>
+import { mixin as clickaway } from "vue-clickaway";
+
 export default {
   name: "NModal",
+  mixins: [clickaway],
   props: {
     showing: {
       required: true,

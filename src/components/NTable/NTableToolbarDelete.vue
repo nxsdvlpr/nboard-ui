@@ -16,38 +16,19 @@
         <NButton class="danger" @click="onShowModal">DELETE</NButton>
       </div>
       <div>
-        <NButton class="outline" @click="onCancel">CANCEL</NButton>
+        <NButton class="outline" @click="onDeleteCancel">CANCEL</NButton>
       </div>
     </div>
-    <Portal to="n-table-layout">
-      <NModal
-        header="Confirm Delete!"
-        :showing="isShowModal"
-        @close="onHideModal"
-        :showClose="true"
-        :backgroundClose="true"
-      >
-        <p>Are you sure want to delete these records?</p>
-        <div class="text-right">
-          <NButton class="danger" @click="onDelete">DELETE</NButton>
-          <NButton class="outline" @click="onCancel">CANCEL</NButton>
-        </div>
-      </NModal>
-    </Portal>
   </div>
 </template>
 
 <script>
-import NModal from "@/components/NModal.vue";
 import NIcon from "@/components/NIcon/NIcon.vue";
 import NButton from "@/components/NButton.vue";
-import { Portal } from "portal-vue";
 
 export default {
   name: "NTableToolbarDelete",
   components: {
-    Portal,
-    NModal,
     NIcon,
     NButton,
   },
@@ -57,25 +38,12 @@ export default {
       default: 0,
     },
   },
-  data() {
-    return {
-      isShowModal: false,
-    };
-  },
   methods: {
     onShowModal() {
-      this.isShowModal = true;
+      this.$emit("show-modal");
     },
-    onHideModal() {
-      this.isShowModal = false;
-    },
-    onDelete(event) {
-      this.onHideModal();
-      this.$emit("on-delete", event);
-    },
-    onCancel(event) {
-      this.onHideModal();
-      this.$emit("on-delete-cancel", event);
+    onDeleteCancel() {
+      this.$emit("delete-cancel");
     },
   },
 };

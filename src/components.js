@@ -30,6 +30,8 @@ import NFormAction from "./components/NForm/NFormAction.vue";
 import NFormSection from "./components/NForm/NFormSection.vue";
 import NFormInput from "./components/NForm/NFormInput.vue";
 import NWidget from "./components/NWidget.vue";
+import NDropdown from "./components/NDropdown.vue";
+import NThumbnail from "./components/NThumbnail.vue";
 import NSpin from "./components/NSpin.vue";
 
 export {
@@ -65,5 +67,7 @@ export {
   NFormSection,
   NFormInput,
   NWidget,
+  NDropdown,
+  NThumbnail,
   NSpin,
 };
