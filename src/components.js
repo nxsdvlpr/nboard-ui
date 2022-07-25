@@ -35,6 +35,7 @@ import NThumbnail from "./components/NThumbnail.vue";
 import NSpin from "./components/NSpin.vue";
 import NPanel from "./components/NPanel.vue";
 import NTabs from "./components/NTabs.vue";
+import NOptionBadge from "./components/NOptionBadge.vue";
 
 export {
   NAvatar,
@@ -74,4 +75,5 @@ export {
   NSpin,
   NPanel,
   NTabs,
+  NOptionBadge,
 };
