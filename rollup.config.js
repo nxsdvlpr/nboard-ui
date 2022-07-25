@@ -12,6 +12,8 @@ const globals = {
   "@kangc/v-md-editor/lib/theme/vuepress.js": "v-md-editor-vuepress.js",
   "@kangc/v-md-editor/lib/theme/style/vuepress.css": "v-md-editor-vuepress.css",
   prismjs: "prismjs",
+  "chart.js": "chart.js",
+  "hex-to-rgba": "hex-to-rgba",
   "prismjs/components/prism-json": "prism-json",
   "@kangc/v-md-editor/lib/lang/en-US": "prismjs-lang-en-US",
   vuedraggable: "vuedraggable",
@@ -28,6 +30,7 @@ const globals = {
   "vue-good-table": "vue-good-table",
   "floating-vue": "floating-vue",
   "vue-clickaway": "vue-clickaway",
+  "vue-chartjs": "vue-chartjs",
   lodash: "lodash",
   vue: "Vue",
 };

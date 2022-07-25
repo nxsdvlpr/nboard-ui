@@ -36,6 +36,9 @@ import NSpin from "./components/NSpin.vue";
 import NPanel from "./components/NPanel.vue";
 import NTabs from "./components/NTabs.vue";
 import NOptionBadge from "./components/NOptionBadge.vue";
+import NChartBar from "./components/NChart/NChartBar.vue";
+import NChartHorizontalBar from "./components/NChart/NChartHorizontalBar.vue";
+import NChartLine from "./components/NChart/NChartLine.vue";
 
 export {
   NAvatar,
@@ -76,4 +79,7 @@ export {
   NPanel,
   NTabs,
   NOptionBadge,
+  NChartBar,
+  NChartHorizontalBar,
+  NChartLine,
 };
