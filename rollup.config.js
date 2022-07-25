@@ -27,6 +27,7 @@ const globals = {
   "@vuelidate/validators": "vuelidate-validators",
   "vue-good-table": "vue-good-table",
   "floating-vue": "floating-vue",
+  "vue-clickaway": "vue-clickaway",
   lodash: "lodash",
   vue: "Vue",
 };
