@@ -33,6 +33,8 @@ import NWidget from "./components/NWidget.vue";
 import NDropdown from "./components/NDropdown.vue";
 import NThumbnail from "./components/NThumbnail.vue";
 import NSpin from "./components/NSpin.vue";
+import NPanel from "./components/NPanel.vue";
+import NTabs from "./components/NTabs.vue";
 
 export {
   NAvatar,
@@ -70,4 +72,6 @@ export {
   NDropdown,
   NThumbnail,
   NSpin,
+  NPanel,
+  NTabs,
 };
