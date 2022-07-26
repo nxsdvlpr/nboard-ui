@@ -1,22 +1,22 @@
 <template>
   <div class="n-icon">
     <NIconHome v-if="icon === 'home'" />
-    <!-- <NIconBag v-else-if="icon === 'bag'" />
+    <NIconBag v-else-if="icon === 'bag'" />
     <NIconTruck v-else-if="icon === 'truck'" />
     <NIconScan v-else-if="icon === 'scan'" />
-    <NIconCategory v-else-if="icon === 'category'" /> -->
+    <NIconCategory v-else-if="icon === 'category'" />
     <NIconUsers v-else-if="icon === 'users'" />
-    <!-- <NIconChart v-else-if="icon === 'chart'" />
+    <NIconChart v-else-if="icon === 'chart'" />
     <NIconSetting v-else-if="icon === 'setting'" />
     <NIconSearch v-else-if="icon === 'search'" />
     <NIconNotification v-else-if="icon === 'notification'" />
     <NIconLogout v-else-if="icon === 'logout'" />
     <NIconMenu v-else-if="icon === 'menu'" />
     <NIconClose v-else-if="icon === 'close'" />
-    <NIconDownload v-else-if="icon === 'download'" /> -->
+    <NIconDownload v-else-if="icon === 'download'" />
     <NIconDelete v-else-if="icon === 'delete'" />
     <NIconMore v-else-if="icon === 'more'" />
-    <!-- <NIconChat v-else-if="icon === 'chat'" />
+    <NIconChat v-else-if="icon === 'chat'" />
     <NIconAdd v-else-if="icon === 'add'" />
     <NIconCalendar v-else-if="icon === 'calendar'" />
     <NIconDone v-else-if="icon === 'done'" />
@@ -89,9 +89,9 @@
     <NIconTicket v-else-if="icon === 'ticket'" />
     <NIconCamera v-else-if="icon === 'camera'" />
     <NIconProfile v-else-if="icon === 'profile'" />
-    <NIconAddUser v-else-if="icon === 'add-user'" /> -->
+    <NIconAddUser v-else-if="icon === 'add-user'" />
     <NIconUsers2 v-else-if="icon === 'users-2'" />
-    <!-- <NIconLogin v-else-if="icon === 'login'" />
+    <NIconLogin v-else-if="icon === 'login'" />
     <NIconVoice v-else-if="icon === 'voice'" />
     <NIconVoice3 v-else-if="icon === 'voice-3'" />
     <NIconEditSquare v-else-if="icon === 'edit-square'" />
@@ -109,235 +109,235 @@
     <NIconTelegram v-else-if="icon === 'telegram'" />
     <NIconFacebook v-else-if="icon === 'facebook'" />
     <NIconDoubleCheckmark v-else-if="icon === 'double-checkmark'" />
-    <NIconCheckmark v-else-if="icon === 'checkmark'" /> -->
+    <NIconCheckmark v-else-if="icon === 'checkmark'" />
   </div>
 </template>
 
 <script>
 import NIconHome from "@/components/NIcon/NIconHome.vue";
-// import NIconBag from "@/components/NIcon/NIconBag.vue";
-// import NIconTruck from "@/components/NIcon/NIconTruck.vue";
-// import NIconScan from "@/components/NIcon/NIconScan.vue";
-// import NIconCategory from "@/components/NIcon/NIconCategory.vue";
+import NIconBag from "@/components/NIcon/NIconBag.vue";
+import NIconTruck from "@/components/NIcon/NIconTruck.vue";
+import NIconScan from "@/components/NIcon/NIconScan.vue";
+import NIconCategory from "@/components/NIcon/NIconCategory.vue";
 import NIconUsers from "@/components/NIcon/NIconUsers.vue";
-// import NIconChart from "@/components/NIcon/NIconChart.vue";
-// import NIconSetting from "@/components/NIcon/NIconSetting.vue";
-// import NIconSearch from "@/components/NIcon/NIconSearch.vue";
-// import NIconNotification from "@/components/NIcon/NIconNotification.vue";
-// import NIconLogout from "@/components/NIcon/NIconLogout.vue";
-// import NIconMenu from "@/components/NIcon/NIconMenu.vue";
-// import NIconClose from "@/components/NIcon/NIconClose.vue";
-// import NIconDownload from "@/components/NIcon/NIconDownload.vue";
+import NIconChart from "@/components/NIcon/NIconChart.vue";
+import NIconSetting from "@/components/NIcon/NIconSetting.vue";
+import NIconSearch from "@/components/NIcon/NIconSearch.vue";
+import NIconNotification from "@/components/NIcon/NIconNotification.vue";
+import NIconLogout from "@/components/NIcon/NIconLogout.vue";
+import NIconMenu from "@/components/NIcon/NIconMenu.vue";
+import NIconClose from "@/components/NIcon/NIconClose.vue";
+import NIconDownload from "@/components/NIcon/NIconDownload.vue";
 import NIconDelete from "@/components/NIcon/NIconDelete.vue";
 import NIconMore from "@/components/NIcon/NIconMore.vue";
-// import NIconChat from "@/components/NIcon/NIconChat.vue";
-// import NIconAdd from "@/components/NIcon/NIconAdd.vue";
-// import NIconCalendar from "@/components/NIcon/NIconCalendar.vue";
-// import NIconDone from "@/components/NIcon/NIconDone.vue";
-// import NIconEdit from "@/components/NIcon/NIconEdit.vue";
-// import NIconFail from "@/components/NIcon/NIconFail.vue";
-// import NIconFilter from "@/components/NIcon/NIconFilter.vue";
-// import NIconHide from "@/components/NIcon/NIconHide.vue";
-// import NIconImage from "@/components/NIcon/NIconImage.vue";
-// import NIconLocation from "@/components/NIcon/NIconLocation.vue";
-// import NIconMoreCircle from "@/components/NIcon/NIconMoreCircle.vue";
-// import NIconMoreSquare from "@/components/NIcon/NIconMoreSquare.vue";
-// import NIconArrowDown from "@/components/NIcon/NIconArrowDown.vue";
-// import NIconArrowDown2 from "@/components/NIcon/NIconArrowDown2.vue";
-// import NIconArrowDown3 from "@/components/NIcon/NIconArrowDown3.vue";
-// import NIconArrowDownCircle from "@/components/NIcon/NIconArrowDownCircle.vue";
-// import NIconArrowDownSquare from "@/components/NIcon/NIconArrowDownSquare.vue";
-// import NIconArrowRight from "@/components/NIcon/NIconArrowRight.vue";
-// import NIconArrowRight2 from "@/components/NIcon/NIconArrowRight2.vue";
-// import NIconArrowRight3 from "@/components/NIcon/NIconArrowRight3.vue";
-// import NIconArrowRightCircle from "@/components/NIcon/NIconArrowRightCircle.vue";
-// import NIconArrowRightSquare from "@/components/NIcon/NIconArrowRightSquare.vue";
-// import NIconArrowUp from "@/components/NIcon/NIconArrowUp.vue";
-// import NIconArrowUp2 from "@/components/NIcon/NIconArrowUp2.vue";
-// import NIconArrowUp3 from "@/components/NIcon/NIconArrowUp3.vue";
-// import NIconArrowUpCircle from "@/components/NIcon/NIconArrowUpCircle.vue";
-// import NIconArrowUpSquare from "@/components/NIcon/NIconArrowUpSquare.vue";
-// import NIconArrowLeft from "@/components/NIcon/NIconArrowLeft.vue";
-// import NIconArrowLeft2 from "@/components/NIcon/NIconArrowLeft2.vue";
-// import NIconArrowLeft3 from "@/components/NIcon/NIconArrowLeft3.vue";
-// import NIconArrowLeftCircle from "@/components/NIcon/NIconArrowLeftCircle.vue";
-// import NIconArrowLeftSquare from "@/components/NIcon/NIconArrowLeftSquare.vue";
-// import NIconShow from "@/components/NIcon/NIconShow.vue";
-// import NIconSwap from "@/components/NIcon/NIconSwap.vue";
-// import NIconTick from "@/components/NIcon/NIconTick.vue";
-// import NIconUpload from "@/components/NIcon/NIconUpload.vue";
-// import NIconPaper from "@/components/NIcon/NIconPaper.vue";
-// import NIconMoney from "@/components/NIcon/NIconMoney.vue";
-// import NIconFolder from "@/components/NIcon/NIconFolder.vue";
-// import NIconWallet from "@/components/NIcon/NIconWallet.vue";
-// import NIconGraph from "@/components/NIcon/NIconGraph.vue";
-// import NIconBookmark from "@/components/NIcon/NIconBookmark.vue";
-// import NIconHeart from "@/components/NIcon/NIconHeart.vue";
-// import NIconPaperNegative from "@/components/NIcon/NIconPaperNegative.vue";
-// import NIconPaperFail from "@/components/NIcon/NIconPaperFail.vue";
-// import NIconPaperDownload from "@/components/NIcon/NIconPaperDownload.vue";
-// import NIconPaperUpload from "@/components/NIcon/NIconPaperUpload.vue";
-// import NIconSend from "@/components/NIcon/NIconSend.vue";
-// import NIconPassword from "@/components/NIcon/NIconPassword.vue";
-// import NIconWork from "@/components/NIcon/NIconWork.vue";
-// import NIconActivity from "@/components/NIcon/NIconActivity.vue";
-// import NIconMessage from "@/components/NIcon/NIconMessage.vue";
-// import NIconVideo from "@/components/NIcon/NIconVideo.vue";
-// import NIconPlus from "@/components/NIcon/NIconPlus.vue";
-// import NIconGame from "@/components/NIcon/NIconGame.vue";
-// import NIconBag3 from "@/components/NIcon/NIconBag3.vue";
-// import NIconTicketStar from "@/components/NIcon/NIconTicketStar.vue";
-// import NIconDiscount from "@/components/NIcon/NIconDiscount.vue";
-// import NIconBuy from "@/components/NIcon/NIconBuy.vue";
-// import NIconInfoCircle from "@/components/NIcon/NIconInfoCircle.vue";
-// import NIconInfoSquare from "@/components/NIcon/NIconInfoSquare.vue";
-// import NIconDanger from "@/components/NIcon/NIconDanger.vue";
-// import NIconDiscovery from "@/components/NIcon/NIconDiscovery.vue";
-// import NIconDocument from "@/components/NIcon/NIconDocument.vue";
-// import NIconTimeSquare from "@/components/NIcon/NIconTimeSquare.vue";
-// import NIconTimeCircle from "@/components/NIcon/NIconTimeCircle.vue";
-// import NIconVolumeUp from "@/components/NIcon/NIconVolumeUp.vue";
-// import NIconVolumeDown from "@/components/NIcon/NIconVolumeDown.vue";
-// import NIconVolumeOff from "@/components/NIcon/NIconVolumeOff.vue";
-// import NIconStar from "@/components/NIcon/NIconStar.vue";
-// import NIconTicket from "@/components/NIcon/NIconTicket.vue";
-// import NIconCamera from "@/components/NIcon/NIconCamera.vue";
-// import NIconProfile from "@/components/NIcon/NIconProfile.vue";
-// import NIconAddUser from "@/components/NIcon/NIconAddUser.vue";
+import NIconChat from "@/components/NIcon/NIconChat.vue";
+import NIconAdd from "@/components/NIcon/NIconAdd.vue";
+import NIconCalendar from "@/components/NIcon/NIconCalendar.vue";
+import NIconDone from "@/components/NIcon/NIconDone.vue";
+import NIconEdit from "@/components/NIcon/NIconEdit.vue";
+import NIconFail from "@/components/NIcon/NIconFail.vue";
+import NIconFilter from "@/components/NIcon/NIconFilter.vue";
+import NIconHide from "@/components/NIcon/NIconHide.vue";
+import NIconImage from "@/components/NIcon/NIconImage.vue";
+import NIconLocation from "@/components/NIcon/NIconLocation.vue";
+import NIconMoreCircle from "@/components/NIcon/NIconMoreCircle.vue";
+import NIconMoreSquare from "@/components/NIcon/NIconMoreSquare.vue";
+import NIconArrowDown from "@/components/NIcon/NIconArrowDown.vue";
+import NIconArrowDown2 from "@/components/NIcon/NIconArrowDown2.vue";
+import NIconArrowDown3 from "@/components/NIcon/NIconArrowDown3.vue";
+import NIconArrowDownCircle from "@/components/NIcon/NIconArrowDownCircle.vue";
+import NIconArrowDownSquare from "@/components/NIcon/NIconArrowDownSquare.vue";
+import NIconArrowRight from "@/components/NIcon/NIconArrowRight.vue";
+import NIconArrowRight2 from "@/components/NIcon/NIconArrowRight2.vue";
+import NIconArrowRight3 from "@/components/NIcon/NIconArrowRight3.vue";
+import NIconArrowRightCircle from "@/components/NIcon/NIconArrowRightCircle.vue";
+import NIconArrowRightSquare from "@/components/NIcon/NIconArrowRightSquare.vue";
+import NIconArrowUp from "@/components/NIcon/NIconArrowUp.vue";
+import NIconArrowUp2 from "@/components/NIcon/NIconArrowUp2.vue";
+import NIconArrowUp3 from "@/components/NIcon/NIconArrowUp3.vue";
+import NIconArrowUpCircle from "@/components/NIcon/NIconArrowUpCircle.vue";
+import NIconArrowUpSquare from "@/components/NIcon/NIconArrowUpSquare.vue";
+import NIconArrowLeft from "@/components/NIcon/NIconArrowLeft.vue";
+import NIconArrowLeft2 from "@/components/NIcon/NIconArrowLeft2.vue";
+import NIconArrowLeft3 from "@/components/NIcon/NIconArrowLeft3.vue";
+import NIconArrowLeftCircle from "@/components/NIcon/NIconArrowLeftCircle.vue";
+import NIconArrowLeftSquare from "@/components/NIcon/NIconArrowLeftSquare.vue";
+import NIconShow from "@/components/NIcon/NIconShow.vue";
+import NIconSwap from "@/components/NIcon/NIconSwap.vue";
+import NIconTick from "@/components/NIcon/NIconTick.vue";
+import NIconUpload from "@/components/NIcon/NIconUpload.vue";
+import NIconPaper from "@/components/NIcon/NIconPaper.vue";
+import NIconMoney from "@/components/NIcon/NIconMoney.vue";
+import NIconFolder from "@/components/NIcon/NIconFolder.vue";
+import NIconWallet from "@/components/NIcon/NIconWallet.vue";
+import NIconGraph from "@/components/NIcon/NIconGraph.vue";
+import NIconBookmark from "@/components/NIcon/NIconBookmark.vue";
+import NIconHeart from "@/components/NIcon/NIconHeart.vue";
+import NIconPaperNegative from "@/components/NIcon/NIconPaperNegative.vue";
+import NIconPaperFail from "@/components/NIcon/NIconPaperFail.vue";
+import NIconPaperDownload from "@/components/NIcon/NIconPaperDownload.vue";
+import NIconPaperUpload from "@/components/NIcon/NIconPaperUpload.vue";
+import NIconSend from "@/components/NIcon/NIconSend.vue";
+import NIconPassword from "@/components/NIcon/NIconPassword.vue";
+import NIconWork from "@/components/NIcon/NIconWork.vue";
+import NIconActivity from "@/components/NIcon/NIconActivity.vue";
+import NIconMessage from "@/components/NIcon/NIconMessage.vue";
+import NIconVideo from "@/components/NIcon/NIconVideo.vue";
+import NIconPlus from "@/components/NIcon/NIconPlus.vue";
+import NIconGame from "@/components/NIcon/NIconGame.vue";
+import NIconBag3 from "@/components/NIcon/NIconBag3.vue";
+import NIconTicketStar from "@/components/NIcon/NIconTicketStar.vue";
+import NIconDiscount from "@/components/NIcon/NIconDiscount.vue";
+import NIconBuy from "@/components/NIcon/NIconBuy.vue";
+import NIconInfoCircle from "@/components/NIcon/NIconInfoCircle.vue";
+import NIconInfoSquare from "@/components/NIcon/NIconInfoSquare.vue";
+import NIconDanger from "@/components/NIcon/NIconDanger.vue";
+import NIconDiscovery from "@/components/NIcon/NIconDiscovery.vue";
+import NIconDocument from "@/components/NIcon/NIconDocument.vue";
+import NIconTimeSquare from "@/components/NIcon/NIconTimeSquare.vue";
+import NIconTimeCircle from "@/components/NIcon/NIconTimeCircle.vue";
+import NIconVolumeUp from "@/components/NIcon/NIconVolumeUp.vue";
+import NIconVolumeDown from "@/components/NIcon/NIconVolumeDown.vue";
+import NIconVolumeOff from "@/components/NIcon/NIconVolumeOff.vue";
+import NIconStar from "@/components/NIcon/NIconStar.vue";
+import NIconTicket from "@/components/NIcon/NIconTicket.vue";
+import NIconCamera from "@/components/NIcon/NIconCamera.vue";
+import NIconProfile from "@/components/NIcon/NIconProfile.vue";
+import NIconAddUser from "@/components/NIcon/NIconAddUser.vue";
 import NIconUsers2 from "@/components/NIcon/NIconUsers2.vue";
-// import NIconLogin from "@/components/NIcon/NIconLogin.vue";
-// import NIconVoice from "@/components/NIcon/NIconVoice.vue";
-// import NIconVoice3 from "@/components/NIcon/NIconVoice3.vue";
-// import NIconEditSquare from "@/components/NIcon/NIconEditSquare.vue";
-// import NIconPlay from "@/components/NIcon/NIconPlay.vue";
-// import NIconFilter3 from "@/components/NIcon/NIconFilter3.vue";
-// import NIconImage3 from "@/components/NIcon/NIconImage3.vue";
-// import NIconCall from "@/components/NIcon/NIconCall.vue";
-// import NIconCalling from "@/components/NIcon/NIconCalling.vue";
-// import NIconCallMissed from "@/components/NIcon/NIconCallMissed.vue";
-// import NIconCallSilent from "@/components/NIcon/NIconCallSilent.vue";
-// import NIconLock from "@/components/NIcon/NIconLock.vue";
-// import NIconUnlock from "@/components/NIcon/NIconUnlock.vue";
-// import NIconWhatsapp from "@/components/NIcon/NIconWhatsapp.vue";
-// import NIconLine from "@/components/NIcon/NIconLine.vue";
-// import NIconTelegram from "@/components/NIcon/NIconTelegram.vue";
-// import NIconFacebook from "@/components/NIcon/NIconFacebook.vue";
-// import NIconDoubleCheckmark from "@/components/NIcon/NIconDoubleCheckmark.vue";
-// import NIconCheckmark from "@/components/NIcon/NIconCheckmark.vue";
+import NIconLogin from "@/components/NIcon/NIconLogin.vue";
+import NIconVoice from "@/components/NIcon/NIconVoice.vue";
+import NIconVoice3 from "@/components/NIcon/NIconVoice3.vue";
+import NIconEditSquare from "@/components/NIcon/NIconEditSquare.vue";
+import NIconPlay from "@/components/NIcon/NIconPlay.vue";
+import NIconFilter3 from "@/components/NIcon/NIconFilter3.vue";
+import NIconImage3 from "@/components/NIcon/NIconImage3.vue";
+import NIconCall from "@/components/NIcon/NIconCall.vue";
+import NIconCalling from "@/components/NIcon/NIconCalling.vue";
+import NIconCallMissed from "@/components/NIcon/NIconCallMissed.vue";
+import NIconCallSilent from "@/components/NIcon/NIconCallSilent.vue";
+import NIconLock from "@/components/NIcon/NIconLock.vue";
+import NIconUnlock from "@/components/NIcon/NIconUnlock.vue";
+import NIconWhatsapp from "@/components/NIcon/NIconWhatsapp.vue";
+import NIconLine from "@/components/NIcon/NIconLine.vue";
+import NIconTelegram from "@/components/NIcon/NIconTelegram.vue";
+import NIconFacebook from "@/components/NIcon/NIconFacebook.vue";
+import NIconDoubleCheckmark from "@/components/NIcon/NIconDoubleCheckmark.vue";
+import NIconCheckmark from "@/components/NIcon/NIconCheckmark.vue";
 
 export default {
   name: "NIcon",
   components: {
     NIconHome,
-    // NIconBag,
-    // NIconTruck,
-    // NIconScan,
-    // NIconCategory,
+    NIconBag,
+    NIconTruck,
+    NIconScan,
+    NIconCategory,
     NIconUsers,
-    // NIconChart,
-    // NIconSetting,
-    // NIconSearch,
-    // NIconNotification,
-    // NIconLogout,
-    // NIconMenu,
-    // NIconClose,
-    // NIconDownload,
+    NIconChart,
+    NIconSetting,
+    NIconSearch,
+    NIconNotification,
+    NIconLogout,
+    NIconMenu,
+    NIconClose,
+    NIconDownload,
     NIconDelete,
     NIconMore,
-    // NIconChat,
-    // NIconAdd,
-    // NIconCalendar,
-    // NIconDone,
-    // NIconEdit,
-    // NIconFail,
-    // NIconFilter,
-    // NIconHide,
-    // NIconImage,
-    // NIconLocation,
-    // NIconMoreCircle,
-    // NIconMoreSquare,
-    // NIconArrowDown,
-    // NIconArrowDown2,
-    // NIconArrowDown3,
-    // NIconArrowDownCircle,
-    // NIconArrowDownSquare,
-    // NIconArrowRight,
-    // NIconArrowRight2,
-    // NIconArrowRight3,
-    // NIconArrowRightCircle,
-    // NIconArrowRightSquare,
-    // NIconArrowUp,
-    // NIconArrowUp2,
-    // NIconArrowUp3,
-    // NIconArrowUpCircle,
-    // NIconArrowUpSquare,
-    // NIconArrowLeft,
-    // NIconArrowLeft2,
-    // NIconArrowLeft3,
-    // NIconArrowLeftCircle,
-    // NIconArrowLeftSquare,
-    // NIconShow,
-    // NIconSwap,
-    // NIconTick,
-    // NIconUpload,
-    // NIconPaper,
-    // NIconMoney,
-    // NIconFolder,
-    // NIconWallet,
-    // NIconGraph,
-    // NIconBookmark,
-    // NIconHeart,
-    // NIconPaperNegative,
-    // NIconPaperFail,
-    // NIconPaperDownload,
-    // NIconPaperUpload,
-    // NIconSend,
-    // NIconPassword,
-    // NIconWork,
-    // NIconActivity,
-    // NIconMessage,
-    // NIconVideo,
-    // NIconPlus,
-    // NIconGame,
-    // NIconBag3,
-    // NIconTicketStar,
-    // NIconDiscount,
-    // NIconBuy,
-    // NIconInfoCircle,
-    // NIconInfoSquare,
-    // NIconDanger,
-    // NIconDiscovery,
-    // NIconDocument,
-    // NIconTimeSquare,
-    // NIconTimeCircle,
-    // NIconVolumeUp,
-    // NIconVolumeDown,
-    // NIconVolumeOff,
-    // NIconStar,
-    // NIconTicket,
-    // NIconCamera,
-    // NIconProfile,
-    // NIconAddUser,
+    NIconChat,
+    NIconAdd,
+    NIconCalendar,
+    NIconDone,
+    NIconEdit,
+    NIconFail,
+    NIconFilter,
+    NIconHide,
+    NIconImage,
+    NIconLocation,
+    NIconMoreCircle,
+    NIconMoreSquare,
+    NIconArrowDown,
+    NIconArrowDown2,
+    NIconArrowDown3,
+    NIconArrowDownCircle,
+    NIconArrowDownSquare,
+    NIconArrowRight,
+    NIconArrowRight2,
+    NIconArrowRight3,
+    NIconArrowRightCircle,
+    NIconArrowRightSquare,
+    NIconArrowUp,
+    NIconArrowUp2,
+    NIconArrowUp3,
+    NIconArrowUpCircle,
+    NIconArrowUpSquare,
+    NIconArrowLeft,
+    NIconArrowLeft2,
+    NIconArrowLeft3,
+    NIconArrowLeftCircle,
+    NIconArrowLeftSquare,
+    NIconShow,
+    NIconSwap,
+    NIconTick,
+    NIconUpload,
+    NIconPaper,
+    NIconMoney,
+    NIconFolder,
+    NIconWallet,
+    NIconGraph,
+    NIconBookmark,
+    NIconHeart,
+    NIconPaperNegative,
+    NIconPaperFail,
+    NIconPaperDownload,
+    NIconPaperUpload,
+    NIconSend,
+    NIconPassword,
+    NIconWork,
+    NIconActivity,
+    NIconMessage,
+    NIconVideo,
+    NIconPlus,
+    NIconGame,
+    NIconBag3,
+    NIconTicketStar,
+    NIconDiscount,
+    NIconBuy,
+    NIconInfoCircle,
+    NIconInfoSquare,
+    NIconDanger,
+    NIconDiscovery,
+    NIconDocument,
+    NIconTimeSquare,
+    NIconTimeCircle,
+    NIconVolumeUp,
+    NIconVolumeDown,
+    NIconVolumeOff,
+    NIconStar,
+    NIconTicket,
+    NIconCamera,
+    NIconProfile,
+    NIconAddUser,
     NIconUsers2,
-    // NIconLogin,
-    // NIconVoice,
-    // NIconVoice3,
-    // NIconEditSquare,
-    // NIconPlay,
-    // NIconFilter3,
-    // NIconImage3,
-    // NIconCall,
-    // NIconCalling,
-    // NIconCallMissed,
-    // NIconCallSilent,
-    // NIconLock,
-    // NIconUnlock,
-    // NIconWhatsapp,
-    // NIconLine,
-    // NIconTelegram,
-    // NIconFacebook,
-    // NIconDoubleCheckmark,
-    // NIconCheckmark,
+    NIconLogin,
+    NIconVoice,
+    NIconVoice3,
+    NIconEditSquare,
+    NIconPlay,
+    NIconFilter3,
+    NIconImage3,
+    NIconCall,
+    NIconCalling,
+    NIconCallMissed,
+    NIconCallSilent,
+    NIconLock,
+    NIconUnlock,
+    NIconWhatsapp,
+    NIconLine,
+    NIconTelegram,
+    NIconFacebook,
+    NIconDoubleCheckmark,
+    NIconCheckmark,
   },
   props: {
     icon: {
