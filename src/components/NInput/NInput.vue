@@ -141,7 +141,6 @@ export default {
     @apply px-3;
     @apply py-0;
     line-height: 2.5rem;
-
     box-shadow: inherit;
     /* -webkit-box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.04);
     box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.04); */

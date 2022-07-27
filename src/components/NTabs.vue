@@ -28,18 +28,15 @@
           class="bottom-right"
           :fixed-classes="fixedClasses"
         >
-          <template #button>
-            <div>
-              <NIcon icon="more" class="mt-0.5" />
-            </div>
+          <template #toggler>
+            <NIconButton icon="more" />
           </template>
-          <div slot-scope="{ hide }" class="n-tabs-items">
+          <div class="n-tabs-items">
             <div
               v-for="(tab, index) in dropdownTabs"
               :key="index"
               class="n-tabs-item"
               role="menuitem"
-              @click="hide"
             >
               <nuxt-link :to="tab.to" class="dropdown-item">
                 {{ tab.name }}
@@ -53,10 +50,16 @@
 </template>
 
 <script>
-import { defaults } from 'lodash'
+import { defaults } from "lodash";
+import NDropdown from "@/components/NDropdown.vue";
+import NIconButton from "@/components/NIcon/NIconButton.vue";
 
 export default {
-  name:"NTabs",
+  name: "NTabs",
+  components: {
+    NDropdown,
+    NIconButton,
+  },
   props: {
     tabs: {
       type: Array,
@@ -72,58 +75,58 @@ export default {
       key: this.$__.randomInt(8),
       fixedClasses: {
         button:
-          'px-1 py-0 leading-none shadow-sm rounded leading-0 bg-white hover:bg-app-lightest focus:bg-app-lightest',
+          "px-1 py-0 leading-none shadow-sm rounded leading-0 bg-white hover:bg-app-lightest focus:bg-app-lightest",
       },
       defaultMinTabItems: {
         sm: 2,
         md: 4,
         lg: 6,
         xl: 8,
-        '2xl': Infinity,
+        "2xl": Infinity,
       },
-    }
+    };
   },
   computed: {
     compMinTabItems() {
-      return defaults(this.minTabItems, this.defaultMinTabItems)
+      return defaults(this.minTabItems, this.defaultMinTabItems);
     },
     currentMinTabItems() {
-      return this.compMinTabItems[this.$mq]
+      return this.compMinTabItems[this.$mq];
     },
     dropdownTabs() {
       return this.tabs.filter((tab, index) => {
-        return index > this.currentMinTabItems - 1
-      })
+        return index > this.currentMinTabItems - 1;
+      });
     },
     compTabs() {
-      const tabs = this.tabs
+      const tabs = this.tabs;
 
-      let activeTabCount = 0
+      let activeTabCount = 0;
 
       tabs.forEach((tab) => {
-        const to = tab.to.replace(/\/+$/, '')
+        const to = tab.to.replace(/\/+$/, "");
 
-        const isAnchor = this.$route.fullPath.search(/#[a-zA-Z]+/) !== -1
+        const isAnchor = this.$route.fullPath.search(/#[a-zA-Z]+/) !== -1;
 
         if (
           this.$route.fullPath.startsWith(to) ||
           (isAnchor && this.$route.fullPath.search(to) !== -1)
         ) {
-          tab.isActive = true
-          activeTabCount++
+          tab.isActive = true;
+          activeTabCount++;
         } else {
-          tab.isActive = false
+          tab.isActive = false;
         }
-      })
+      });
 
       if (activeTabCount > 1) {
-        tabs[0].isActive = false
+        tabs[0].isActive = false;
       }
 
-      return tabs
+      return tabs;
     },
   },
-}
+};
 </script>
 
 <style scoped>

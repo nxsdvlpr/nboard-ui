@@ -1,24 +1,8 @@
-/*! purgecss start ignore */
-
-@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;700&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  html {
-    font-family: "Mukta", sans-serif;
-    font-size: 16px;
-
-    scroll-behavior: smooth;
-
-    @screen md {
-      font-family: "Mukta", sans-serif;
-      font-size: 15px;
-    }
-  }
-
   a,
   button,
   div.n-app-subnav-dropup,
@@ -38,20 +22,6 @@
     font-family: "Mukta", sans-serif;
   }
 
-  /* Link */
-  .text-link {
-    @apply font-medium;
-    @apply text-gray-dark;
-
-    &:hover,
-    &:focus {
-      @apply text-gray-darkest;
-      @apply border-b;
-      @apply border-dashed;
-      @apply border-gray-400;
-    }
-  }
-
   /*
   Heading
   - Should set margin-bottom on each heading styles to specify its bottom spacing
@@ -67,110 +37,4 @@
       @apply mb-1;
     }
   }
-
-  /*
-  Text
-  - Should set margin-top on each content/display
-  */
-  .text-content {
-    p {
-      @apply mt-3;
-
-      &:first-child {
-        @apply mt-0;
-      }
-    }
-  }
-
-  .input-inset-shadow {
-    -webkit-box-shadow: inset 0 2px 5px 0 rgba(0, 0, 0, 0.06);
-    box-shadow: inset 0 2px 5px 0 rgba(0, 0, 0, 0.06);
-  }
 }
-
-@layer utilities {
-  .n-thumbnail {
-    /* Shape */
-    &.rounded {
-      @apply rounded-full;
-    }
-
-    /* Size */
-    @apply w-12;
-    @apply h-12;
-
-    &.xs {
-      @apply w-8;
-      @apply h-8;
-    }
-
-    &.sm {
-      @apply w-10;
-      @apply h-10;
-    }
-
-    &.lg {
-      @apply w-14;
-      @apply h-14;
-    }
-
-    &.xl {
-      @apply w-16;
-      @apply h-16;
-    }
-
-    &.xxl {
-      @apply w-20;
-      @apply h-20;
-    }
-  }
-
-  .fade-enter-active {
-    transition: opacity 0.5s;
-  }
-
-  .fade-enter {
-    opacity: 0;
-  }
-
-  .slide-fade-right-enter-active {
-    transition: all 0.8s ease;
-  }
-
-  .slide-fade-right-enter {
-    transform: translateX(-24px);
-    opacity: 0;
-  }
-
-  .slide-fade-left-enter-active {
-    transition: all 0.8s ease;
-  }
-
-  .slide-fade-left-enter {
-    transform: translateX(24px);
-    opacity: 0;
-  }
-
-  .slide-fade-top-enter-active {
-    transition: all 1.3s ease;
-  }
-
-  .slide-fade-top-enter {
-    transform: translateY(32px);
-    opacity: 0;
-  }
-
-  @layer responsive {
-    /* Chrome, Safari and Opera */
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
-
-    .no-scrollbar {
-      -ms-overflow-style: none; /* IE and Edge */
-      scrollbar-width: none; /* Firefox */
-    }
-  }
-}
-
-/*! purgecss end ignore */

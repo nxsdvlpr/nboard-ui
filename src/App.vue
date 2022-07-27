@@ -194,6 +194,10 @@
         </div>
       </div>
 
+      <div class="mb-4">
+        <!-- <NTabs :tabs="tabs" /> -->
+      </div>
+
       <div class="flex flex-col gap-y-2 mb-4">
         <NTable :rows="tableRows" :columns="tableColumns">
           <template #table-row="props">
@@ -257,6 +261,7 @@
                 <NSelect
                   v-model="form.product.category"
                   :options="form.categories"
+                  :disabled="true"
                 />
               </NInputGroup>
 
@@ -388,6 +393,21 @@ export default {
       },
     ]);
 
+    const tabs = ref([
+      {
+        name: "Overview",
+        to: "#overview",
+      },
+      {
+        name: "Notes",
+        to: "#notes",
+      },
+      {
+        name: "Address",
+        to: "#address",
+      },
+    ]);
+
     const tableRows = computed(() => {
       const list = [];
 
@@ -464,7 +484,7 @@ export default {
         form.product.enableDiscount = "on";
       }, 4000);
     });
-    return { form, submit, validation, tableColumns, tableRows };
+    return { form, tabs, submit, validation, tableColumns, tableRows };
   },
 };
 </script>

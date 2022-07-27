@@ -136,5 +136,23 @@ export default {
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.15) !important;
     overflow-x: hidden !important;
   }
+
+  &.vs--disabled {
+    @apply cursor-not-allowed !important;
+
+    & .vs__dropdown-toggle {
+      background-color: #f8f8f8 !important;
+
+      & .vs__selected-options {
+        & .vs__selected {
+          background-color: #f8f8f8 !important;
+        }
+
+        & .vs__search {
+          background-color: #f8f8f8 !important;
+        }
+      }
+    }
+  }
 }
 </style>
