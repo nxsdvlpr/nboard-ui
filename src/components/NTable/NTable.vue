@@ -234,8 +234,8 @@ export default {
       ]);
     },
     computedColumns() {
-      const currencyFn = (x) => x;
-      const shortDateFn = (x) => x;
+      const currencyFn = this.$__.currency;
+      const shortDateFn = this.$__.shortDate;
       return this.columns.map(function (column) {
         if (typeof column.type !== "undefined") {
           switch (column.type) {
