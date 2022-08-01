@@ -39,6 +39,7 @@ import NOptionBadge from "./components/NOptionBadge.vue";
 import NChartBar from "./components/NChart/NChartBar.vue";
 import NChartHorizontalBar from "./components/NChart/NChartHorizontalBar.vue";
 import NChartLine from "./components/NChart/NChartLine.vue";
+import NDatepicker from "./components/NDatepicker.vue";
 
 export {
   NAvatar,
@@ -82,4 +83,5 @@ export {
   NChartBar,
   NChartHorizontalBar,
   NChartLine,
+  NDatepicker,
 };
