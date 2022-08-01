@@ -2,7 +2,8 @@
   <Transition name="fade">
     <div
       v-if="showing"
-      class="fixed inset-0 w-full h-screen flex items-center justify-center bg-smoke-600 z-50"
+      class="fixed inset-0 w-full h-screen flex items-center justify-center z-50"
+      style="background-color: rgba(0, 0, 0, 0.6)"
       @click.self="closeIfShown"
       :class="customCSS.background"
     >
