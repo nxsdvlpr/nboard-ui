@@ -14,6 +14,7 @@
       @input="onInput"
       @change="onChange"
       @keypress="onKeypress"
+      @keyup.enter="onKeyupEnter"
     />
     <div v-if="hasSuffix" class="n-input-suffix">
       {{ suffix }}
@@ -114,6 +115,9 @@ export default {
     },
     onKeypress(event) {
       this.$emit("keypress", event.target.value, event);
+    },
+    onKeyupEnter(event) {
+      this.$emit("keyup.enter", event);
     },
   },
 };
