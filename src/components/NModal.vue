@@ -23,7 +23,7 @@
         </button>
         <div class="overflow-auto max-h-screen w-full">
           <div class="border-b border-gray-100 p-3 rounded-t-xl font-medium">
-            Confirm Delete!
+            {{ header }}
           </div>
           <div class="px-4 py-3 md:px-6 md:py-6">
             <slot />
@@ -41,6 +41,10 @@ export default {
   name: "NModal",
   mixins: [clickaway],
   props: {
+    header: {
+      type: String,
+      default: "Confirm Delete",
+    },
     showing: {
       required: true,
       type: Boolean,
