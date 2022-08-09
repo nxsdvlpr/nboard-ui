@@ -21,6 +21,7 @@ const globals = {
   "overlayscrollbars/css/OverlayScrollbars.css": "overlayscrollbars.css",
   "vue-upload-component": "vue-upload-component",
   "vuejs-datepicker": "vuejs-datepicker",
+  "v-calendar/lib/components/date-picker.umd": "v-calendar",
   "fuse.js": "fuse.js",
   "vue-select/dist/vue-select.css": "v-select.css",
   "vue-select": "v-select",

@@ -1,27 +1,45 @@
 <template>
-  <datepicker
+  <date-picker
     class="n-datepicker"
     v-bind="{ ...$props, ...$attrs }"
-    input-class="w-full border outline-none text-gray-dark border-gray-light rounded focus:border-gray-400 focus:ring-0"
+    mode="date"
     v-on="$listeners"
-  />
+  >
+    <template #default="{ inputValue, inputEvents }">
+      <input
+        class="w-full border outline-none text-gray-dark border-gray-light rounded focus:border-gray-400 focus:ring-0"
+        :value="inputValue"
+        readonly
+        :disabled="disabled"
+        v-on="disabled ? undefined : inputEvents"
+      />
+    </template>
+  </date-picker>
 </template>
 
 <script>
-import Datepicker from "vuejs-datepicker";
+import DatePicker from "v-calendar/lib/components/date-picker.umd";
 
 export default {
   name: "NDatepicker",
   components: {
-    Datepicker,
+    DatePicker,
   },
   inheritAttrs: false,
+  props: {
+    disabled: {
+      type: Boolean,
+      default: false,
+    },
+  },
 };
 </script>
 
 <style scoped>
 .n-datepicker {
-  :deep() input {
+  input {
+    @apply px-3;
+    @apply py-0;
     line-height: 2.5rem;
     box-shadow: inherit;
     /* -webkit-box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.04);
